@@ -6,11 +6,8 @@ deploy
 
 from fabric.api import *
 from datetime import datetime
-from os.path import isfile
-
-env.user = 'ubuntu'
-env.hosts = ['35.231.61.116', '54.197.26.225']
-
+from os.path import isfile, exists, isdir
+env.hosts = ['54.237.5.225', '	100.27.13.99']
 
 def do_pack():
     """ Generate a .tgz archive from the contents of the web_static folder """
@@ -51,3 +48,4 @@ def deploy():
     if archive_path is None:
         return False
     return do_deploy(archive_path)
+
