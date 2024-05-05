@@ -4,7 +4,7 @@ Fabric script that distributes an archive to web server
 """
 from fabric.api import *
 from datetime import datetime
-import os
+from os.path import isfile
 
 env.hosts = ['54.144.136.64', '100.24.236.179']
 env.user = 'ubuntu'
